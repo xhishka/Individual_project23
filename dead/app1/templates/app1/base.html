@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+</head>
+<body>
+<header class="masthead mb-auto">
+    <div class="inner">
+        <h3 class="masthead-brand">WOGs</h3>
+        <nav class="nav nav-masthead justify-content-center">
+            <a class="nav-link active" href="/">Домой</a>
+            <a class="nav-link" href="/gifts">Подарки</a>
+            <a class="nav-link" href="/basket">Корзина</a>
+        </nav>
+    </div>
+</header>
+{% block content %}{% endblock %}
+
+</body>
+</html>

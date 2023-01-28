@@ -1,0 +1,26 @@
+{% extends 'app1/base.html' %}
+
+{% block title %}
+{{ title }}
+{% endblock %}
+{% block content %}
+<h1>Подарки:</h1>
+{% for i in gifts %}
+    <div class="container">
+        <div class="row">
+            <div class="col-5 offset-1">
+                <div class="alert alert-warning mt-2">
+                    <h3>{{ i.title }}</h3>
+                    <img src="{{ i.task.url }}">
+                </div>
+            </div>
+            <div class="col-5 offset-1">
+                <div class="alert alert-warning mt-2">
+                    <h3>{{ i.title }}</h3>
+                    <img src="{{ i.task.url }}">
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+{% endblock %}
