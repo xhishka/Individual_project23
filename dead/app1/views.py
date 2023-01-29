@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Gifts
+from .models import Gifts, Basket
 
 
 def index(request):
@@ -12,4 +12,5 @@ def gifts(request):
 
 
 def basket(request):
-    return render(request, 'app1/basket.html')
+    basket = Basket.objects.order_by("id")
+    return render(request, 'app1/basket.html', {'title': 'Избранное', 'basket': gifts})

@@ -1,11 +1,36 @@
 {% extends 'app1/base.html' %}
 
 {% block title %}
-Избранное
+Избранное:
 {% endblock %}
 {% block content %}
 <h1>Избранное</h1>
-
-
+{% if basket %}
+    {% for b in basket %}
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                <div class="col">
+                    <div class="card shadow-sm">
+                            <img src="{{ b.task.url }}" width="100%"/>
+                        <div class="card-body">
+                            <a class="card-text" href="https://vseigru.net/igry-5-nochej-s-freddi.html">{{ b.title }}</a>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+{% else %}
+    <p class="text-center">Избранное пока пустое,
+  <a href="/gifts">выберите подарки которые вам нравятся</a>.
+</p>
+{% endif %}
 {% endblock %}
 
