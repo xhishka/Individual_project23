@@ -13,4 +13,4 @@ def gifts(request):
 
 def basket(request):
     basket = Basket.objects.order_by("id")
-    return render(request, 'app1/basket.html', {'title': 'Избранное', 'basket': gifts})
+    return render(request, 'app1/basket.html', {'title': 'Избранное', 'basket': basket})
