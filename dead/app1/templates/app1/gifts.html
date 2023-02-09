@@ -5,40 +5,50 @@
 {% endblock %}
 {% block content %}
 <form action="{% url 'filter' %}" method="get">
-    <div class="left-side my-4">
-        <h3 class="sear-head editContent">Кому?</h3>
-        <ul class="w3layouts-box-list">
-            {% for x in gifts %}
-            <li class="editContent">
-                <input type="checkbox" class="checked" name="whom" value="{{ x.id }}">
-                <span class="span editContent">{{ x.whom }}</span>
-            </li>
-            {% endfor %}
-        </ul>
+    <div>
+        \
+        <div class="album py-5 bg-light">
+            <div class="container">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                    <div class="col">
+                        <h3 class="sear-head editContent">Кому?</h3>
+                        <ul class="w3layouts-box-list">
+                            {% for x in gifts %}
+                            <li class="editContent">
+                                <input type="checkbox" class="checked" name="whom" value="{{ x.id }}">
+                                <span class="span editContent">{{ x.whom }}</span>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <h3 class="sear-head editContent">Возраст(того кому дарите)?</h3>
+                        <ul class="w3layouts-box-list">
+                            {% for x in gifts %}
+                            <li class="editContent">
+                                <input type="checkbox" class="checked" name="age" value="{{ x.id }}">
+                                <span class="span editContent">{{ x.age }}</span>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <h3 class="sear-head editContent">Какой повод?</h3>
+                        <ul class="w3layouts-box-list">
+                            {% for x in gifts %}
+                            <li class="editContent">
+                                <input type="checkbox" class="checked" name="reason" value="{{ x.id }}">
+                                <span class="span editContent">{{ x.reason }}</span>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    <button type="submit">Найти</button>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="left-side my-4">
-        <h3 class="sear-head editContent">Возраст(того кому дарите)?</h3>
-        <ul class="w3layouts-box-list">
-            {% for x in gifts %}
-            <li class="editContent">
-                <input type="checkbox" class="checked" name="age" value="{{ x.id }}">
-                <span class="span editContent">{{ x.age }}</span>
-            </li>
-            {% endfor %}
-        </ul>
-    </div>
-    <div class="left-side my-4">
-        <h3 class="sear-head editContent">Какой повод?</h3>
-        <ul class="w3layouts-box-list">
-            {% for x in gifts %}
-            <li class="editContent">
-                <input type="checkbox" class="checked" name="reason" value="{{ x.id }}">
-                <span class="span editContent">{{ x.reason }}</span>
-            </li>
-            {% endfor %}
-        </ul>
-    </div>
-    <button type="submit">Найти</button>
+
 </form>
 <div>
     <div class="container mb-5">
