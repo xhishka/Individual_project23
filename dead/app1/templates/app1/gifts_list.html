@@ -14,7 +14,7 @@
                         <ul class="w3layouts-box-list">
                             {% for x in gifts %}
                             <li class="editContent">
-                                <input type="checkbox" class="checked" name="whom" value="{{ x.id }}">
+                                <input type="checkbox" class="checked" name="whom" value="{{ x.whom }}">
                                 <span class="span editContent">{{ x.whom }}</span>
                             </li>
                             {% endfor %}
@@ -42,12 +42,11 @@
                             {% endfor %}
                         </ul>
                     </div>
-                    <button type="submit">Найти</button>
                 </div>
+                <button type="submit">Найти</button>
             </div>
         </div>
     </div>
-
 </form>
 <div>
     <div class="container mb-5">
